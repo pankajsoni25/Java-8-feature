@@ -9,7 +9,7 @@ public class ExceptionHandlingExample {
 
     public static void main(String[] args) {
         int [] someNumbers = {1,2,3,4};
-        int key = 0;
+        int key = 2;
 
 //        process(someNumbers,0);
 //        process(someNumbers,key, ( v, k )-> System.out.println(v + k));
@@ -24,13 +24,20 @@ public class ExceptionHandlingExample {
         /*1) Handling Exception in method in lambda expression it self */
         processHandle(someNumbers, key, ( v, k ) ->{
             try{
-                System.out.println(v / k))
+                System.out.println(v / k);
             }catch (ArithmeticException e){
                 e.printStackTrace();
             }
         } );
 
-        
+
+        /*Exception and lambdas calling wrapperLambdas calling instead of passing simple lambdas */
+        processHandle(someNumbers, key, wrapperLamdas(( v, k ) -> System.out.println(v / k)));
+        key = 2;
+        processHandle(someNumbers, key, wrapperLamdas(( v, k ) -> System.out.println(v / k)));
+
+
+
     }
 
     private static void process(int[] someNumbers, int key) {
@@ -52,4 +59,10 @@ public class ExceptionHandlingExample {
             consumer.accept(  number ,key);
         }
     }
+
+    public static BiConsumer<Integer, Integer> wrapperLamdas(BiConsumer<Integer, Integer> consumer){
+        System.out.println("Inside wrapper Lambdas");
+        return consumer;
+    }
+
 }
