@@ -36,7 +36,7 @@ public class StandardFunctionalInterfaceExample {
         performConditionally(people, p -> p.getLastName().startsWith("C"));
         performConditionally(people, p -> p.getLastName().startsWith("C"), p -> System.out.println(p));
         performConditionally(people, p -> p.getLastName().startsWith("C"), p -> System.out.println(p.getFirstName()));
-        performConditionally(people, p -> p.getLastName().startsWith("C"), p -> System.out.println(p.getLastName()));
+        performConditionally(people, p -> true, p -> System.out.println(p.getLastName()));
     }
 
     private static void performConditionally(List<Person> people, Predicate<Person> predicate){

@@ -11,7 +11,7 @@ public class ThisReferenceExample {
     }
     public static void main(String[] args) {
         ThisReferenceExample thisReferenceExample = new ThisReferenceExample();
-        System.out.println("this = "+this); // this will not work
+//        System.out.println("this = "+this); // this will not work
 
         /* Here I am accessing  this reference actually this cannot be applied in static context,
         * But in anonymous inner class is void method so we can use it but
@@ -59,7 +59,7 @@ public class ThisReferenceExample {
         thisReferenceExample.doProcess(10,i->{
             /* Here I am copy two lines from process method Overridden of above anonymous inner class */
             System.out.println("Value of i = "+i);
-            System.out.println("this = "+this); // this will not work
+//            System.out.println("this = "+this); // this will not work
             /* Notice what happens
             * Why is that? I am not using not inside psvm directly , I am using inside lambdas
             * expression, but why is still complaining
