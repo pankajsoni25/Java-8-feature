@@ -8,7 +8,7 @@ public class ClosuresExample {
     public static void main(String[] args) {
 
         int a = 10;
-        int b = 10;
+        int b = 20;
         doProcess(a, new Process() {
             @Override
             public void process(int i) {
@@ -18,7 +18,20 @@ public class ClosuresExample {
             }
         });
 
+        /*TODO Point to be note for better understaing */
         /*Here i am calling this method using lambdas expression and override as well in it */
+
+
+        /*lambda expression  (i -> System.out.println(i+b))
+        * this is passed to doProcess(i), now doProcess() accept it and it gonna
+        * execute it the p.process(i) inside doProcess()
+        *
+        * When does it execute it ?
+        * this will execute the lambda expression(i -> System.out.println(i+b)) body(System.out.println(i+b))
+        *
+        * Now where is b comming from in doProcess() into p.process()
+        * This is the thing called closure
+        * ==> Whenever the kambdas expression*/
         doProcess(a, i -> System.out.println(i+b));
     }
 
