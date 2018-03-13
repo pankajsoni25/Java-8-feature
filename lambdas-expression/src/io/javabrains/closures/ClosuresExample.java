@@ -55,7 +55,7 @@ public class ClosuresExample {
     *
     * */
 
-    private static void doProcess(int i, Process p){
+    public static void doProcess(int i, Process p){
         System.out.println("indoooooooo");
         p.process(i);
     }
