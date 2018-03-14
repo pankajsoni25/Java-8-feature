@@ -1,0 +1,9 @@
+Generic Method
+We don't have to declare Generics at the class level
+to define generic method
+but if you have variables
+that use generics then we need to declare the Type parameter the class level
+
+
+Inheritance and subtype
+Number n = new Integer(4);
