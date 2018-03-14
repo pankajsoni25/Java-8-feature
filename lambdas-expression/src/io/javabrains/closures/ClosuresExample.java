@@ -26,12 +26,26 @@ public class ClosuresExample {
         * this is passed to doProcess(i), now doProcess() accept it and it gonna
         * execute it the p.process(i) inside doProcess()
         *
-        * When does it execute it ?
+        * What does it execute it ?
         * this will execute the lambda expression(i -> System.out.println(i+b)) body(System.out.println(i+b))
         *
-        * Now where is b comming from in doProcess() into p.process()
-        * This is the thing called closure
-        * ==> Whenever the kambdas expression*/
+        * Now where is b coming from in doProcess() into p.process() method,
+        * This is the thing called closure(Line no. 11)
+        * ==> Whenever the lambdas expression here and using something in the scope
+        * some kind of variable in the scope
+        *
+        * what the java compiler and Java runtime do here ?
+        * this will some kind of freeze the value and say this lambda expression using b, and
+        * b happens this time 20, Which gonna freeze the value, along with the lambda expression,
+        * So where ever this lambda expression goes, And whenever access the value of b, it takes the frozen
+        * in value of b,
+        * because this could go (lambda exp) and this doProcess() could execute somewhere later in time,
+        * by that time may be b has to change some other different value, doesn't matter,
+        *
+        * doProcess()'s Process it's gonna contain the frozen value of b.
+        * so where ever that lambda expression goes that frozen along with it.
+        *
+        * */
         doProcess(a, i -> System.out.println(i+b));
     }
 
@@ -55,7 +69,7 @@ public class ClosuresExample {
     *
     * */
 
-    public static void doProcess(int i, Process p){
+    private static void doProcess(int i, Process p){
         System.out.println("indoooooooo");
         p.process(i);
     }
