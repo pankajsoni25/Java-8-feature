@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>bigthinx</name>
+    <country>bigthinx</country>
     <description>Demo project for Spring Boot</description>
 
     <parent>
@@ -21,8 +21,8 @@
 
     <developers>
         <developer>
-            <id>pankaj-soni</id>
             <name>pankaj-soni</name>
+            <country>pankaj-soni</country>
         </developer>
     </developers>
 
