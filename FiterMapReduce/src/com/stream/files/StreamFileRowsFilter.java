@@ -16,6 +16,4 @@ public class StreamFileRowsFilter {
                 .forEach(System.out::println);
         lines.close();
     }
-
-
 }
