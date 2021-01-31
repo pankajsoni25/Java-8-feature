@@ -19,3 +19,39 @@ HashMap<String, Item> map2 =
 https://stackify.com/streams-guide-java-8/
 https://stackoverflow.com/questions/51333730/memory-optimization-of-java-collectors-tomap
 https://java8tips.readthedocs.io/en/stable/advcollectors.html
+
+Important question::
+
+class Test{
+
+	public static void changeEmplement(List<Integer> obj){
+		obj.add(1);
+		obj.add(1);
+		obj.add(1);
+		obj.add(9);
+		obj.add(1);
+		obj.add(5);
+		obj.add(5);
+		obj.add(6);
+		obj.add(6);
+		obj.add(6);
+		obj = null;
+		System.out.println(obj);
+	}
+
+	public static void main(String[] args) {
+		List<Integer> integers = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8,9,1));
+		changeEmplement(integers);
+		System.out.println(integers);// size is 20 and priting all elements
+	}
+}
+
+using multithreaded sum of integer's list,
+map key change after put in map
+
+Immutable break stop using deepclonning
+
+Change Element using second method
+
+Array of element print all elements sum of two {2,5,4,7,55,66,99}
+sum of any two elemnt should be same, needs to use custome class and implement this.
